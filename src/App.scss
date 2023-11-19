@@ -28,15 +28,12 @@ $extraLarge: 1400px;
 
 html{
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  position: relative;
+  width: 100%;
 }
 
 .container{
   display: flex;
   flex-direction: column;
-  scroll-snap-type: y mandatory;
 }
 
 

@@ -1,22 +1,20 @@
 @import '../App.scss';
 
 .about {
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-    padding: 1.8em 8em;
-    height: 100vh;
+    padding: 4em 8em;
+    min-height: 100vh;
     background-color: #19212D;
     color: #DFDFDF;
-    display: grid;
     align-items: center;
-    
 
-    &__body {
+
+    &__info {
         display: grid;
         align-items: center;
         grid-template-columns: 2fr 1fr;
         padding: 2em 0;
         gap: 1em;
+
         i {
             font-family: 'Times New Roman';
             font-size: 2em;
@@ -28,6 +26,54 @@
         }
     }
 
+    &__diploma {
+        margin: 6em 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1em;
+
+        &__card {
+            text-align: center;
+            padding: 0 2em;
+
+            img {
+                width: 50%;
+            }
+
+            h3 {
+                font-size: 2em;
+            }
+        }
+    }
+
+    &__languages {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2em;
+
+        &__lang {
+            display: grid;
+            padding: 2em;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 1em;
+
+            h3 {
+                grid-column: 1/7;
+                font-size: 2em;
+            }
+
+            div {
+                height: 2em;
+                border: solid 1px #DFDFDF;
+                border-radius: 10px;
+
+                &.fill {
+                    background-color: #DFDFDF;
+                }
+            }
+        }
+    }
+
     h1 {
         font-size: 3.6em;
     }
@@ -35,76 +81,98 @@
 
 }
 
+
 @media screen and (min-device-width:$extraLarge) {
     .about {
-        padding: 0 9vw;
-    
-        &__body {
+        padding: 2vw 9vw;
+
+        &__info {
             grid-template-columns: 2fr 1fr;
             padding: 2em 0;
             gap: 1em;
+
             i {
                 font-size: 1.6vw;
             }
-    
+
             img {
                 width: 100%;
             }
         }
-    
+
         h1 {
             font-size: 4em;
         }
-    
-    
-    }
-}
 
-@media screen and (max-device-width:$tablet) {
-    .about {
-        min-height: 100svh;
-        padding: 2rem;
-        h1 {
-            font-size: 2rem;
-        }
 
-        &__body {
-            grid-template-columns: 1fr;
-            grid-template-rows: auto auto;
-
-            img {
-                width: 50%;
-                grid-row: 1;
-                justify-self: center;
-            }
-            i{
-                font-size: clamp(1rem, 5vw, 1.5rem);
-            }
-        }
     }
 }
 
 @media screen and (max-device-width:$phone) {
     .about {
-        scroll-snap-align: start;
-        padding-left:8vw;
-        padding-right:8vw;
-        padding-bottom: 15vh;
         min-height: 100svh;
-        height: max-content;
+        padding: 3em;
         h1 {
             font-size: 8vw;
         }
 
-        &__body {
+        &__info {
             grid-template-columns: 1fr;
-            grid-template-rows: auto auto;
             img {
-                width: 80%;
+                width: 70%;
                 grid-row: 1;
                 justify-self: center;
                 margin: 5vw 0;
             }
         }
+        &__diploma {
+            margin: 6em 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6em;
+    
+            &__card {
+                text-align: center;
+                padding: 0 2em;
+    
+                img {
+                    width: 50%;
+                }
+    
+                h3 {
+                    font-size: 2em;
+                }
+            }
+        }
+    
+        &__languages {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2em;
+    
+            &__lang {
+                display: grid;
+                padding: 2em;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                gap: 1em;
+    
+                h3 {
+                    grid-column: 1/7;
+                    font-size: 2em;
+                }
+    
+                div {
+                    height: 2em;
+                    border: solid 1px #DFDFDF;
+                    border-radius: 10px;
+    
+                    &.fill {
+                        background-color: #DFDFDF;
+                    }
+                }
+            }
+        }
     }
+
+    
 }
