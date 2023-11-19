@@ -1,0 +1,273 @@
+@import '../App.scss';
+
+
+.OSSection{
+    padding: 1.8em 8em;
+    &__header{
+        font-size: 3.6em;
+        position: sticky;
+        top: 0.3em;
+    }
+}
+.skillSection{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    &>div{
+        width: 100%;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        align-self: end;
+        text-align: center;
+    }
+    //grid-template-rows: auto auto auto auto auto;
+    h1{
+        font-size: 3em;
+    }
+    p{
+        font-size: 2em;
+    }
+    
+    &__presentation{
+        &__photoshop{
+            user-select: none;
+            width: 78%;
+            box-shadow: rgb(88, 88, 88) 5px 5px 10px;
+
+        }
+        &__office{
+            user-select: none;
+            width: 70%;
+        }
+        &__filmMaking{
+            height: 75vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            justify-items: center;
+            padding: 2em;
+            &__video{
+                max-height: 58vh;
+                box-shadow: rgb(88, 88, 88) 2px 2px 10px;
+                border-radius: 5px;
+                transition: box-shadow 0.3s, scale 0.3s;
+                &:hover{
+                    box-shadow: rgb(140, 164, 190) 3px 3px 15px;
+                    scale: 1.1;
+                    cursor: none;
+                }
+            }
+        }
+        &__hardware{
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            grid-template-rows: 35vh 35vh;
+            grid-template-areas: 
+                    "vid1 vid2 vid3 vid4"
+                    "vid5 vid2 vid3 vid4"
+                ;
+            gap: 1.5vw;
+            align-items: center;
+            &__video{
+                box-shadow: rgb(88, 88, 88) 2px 2px 10px;
+                border-radius: 5px;
+                transition: box-shadow 0.3s, scale 0.3s;
+                &:hover{
+                    box-shadow: rgb(140, 164, 190) 3px 3px 15px;
+                    scale: 1.1;
+                    cursor: none;
+                }
+            }
+            .landscape{
+                grid-column: 1;
+                width: 100%;
+            }
+            .portrait{
+                width: 100%;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                align-self: center;
+            }
+        }
+    }
+    
+}
+
+.slideShow{
+    display: grid;
+    grid-template-columns: 0.5fr 9fr 0.5fr;
+    align-items: center;
+    justify-items: center;
+    &__image{
+        user-select: none;
+        max-width: 87%;
+        max-height: 75vh;
+        box-shadow: rgb(88, 88, 88) 2px 2px 10px;
+    }
+    &__direction__left, &__direction__right{
+        background-image: url("../assets/images/arrow.png");
+        background-repeat: no-repeat;
+        background-size: 1.5vw 1.5vw;
+        background-position: center;
+        display: grid;
+        border: solid #adadad 2px;
+        grid-template-columns: 1fr;
+        border-radius: 50%;
+        height: 3.5vw;
+        width: 3.5vw;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.3s, transform 0.3s;
+        &:hover{
+            background-color: rgba(128, 128, 128, 0.514);
+            transform: scale(1.2);
+        }
+        &:active{
+            background-color: rgba(128, 128, 128, 0.514);
+
+        }
+    }
+    &__direction__left{
+        justify-self: left;
+        rotate: 180deg;
+    }
+}
+
+
+@media screen and (min-device-width:$extraLarge) {
+    .OSSection{
+        padding: 0 9vw;
+        &__header{
+            font-size: 4em;
+            top: 0.6em;
+        }
+    }
+    .skillSection{
+        &>div{
+            align-self: center;
+        }
+        h1{
+            font-size: 2.3vw;
+        }
+        p{
+            font-size: 1.6vw;
+        }
+        
+        &__presentation{
+            &__photoshop{
+                width: 90%;    
+            }
+            &__office{
+                width: 80%;
+            }
+            &__filmMaking{
+                padding: 2vw;
+                height: 70vh;
+                &__video{
+                    max-height: 50vh;
+                }
+            }
+            &__hardware{
+                grid-template-rows: 30vh 30vh;
+                padding: 0vw;
+                gap: 2vw;
+            }
+        }
+        
+    }
+    .slideShow{
+        &__image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+}
+
+@media screen and (max-device-width:$phone) {
+    .OSSection{
+        padding-left:4vw;
+        padding-right:4vw;
+        &__header{
+            position: fixed;
+            font-size: 8vw;
+        }
+    }
+    .skillSection{
+        scroll-snap-align: center;
+        &>div{
+            align-self: center;
+            padding: 0;
+            gap: 2em;
+        }
+        h1{
+            font-size: 8vw;
+        }
+        p{
+            font-size: 4vw;
+        }
+        
+        &__presentation{
+            &__photoshop{
+                width: 100%;    
+            }
+            &__office{
+                width: 80%;
+            }
+            &__filmMaking{
+                place-self: center;
+                height: 64vh;
+                grid-template-columns: 1fr 1fr;
+                padding: 0vw;
+                
+                gap: 0;
+                &__video{
+                    max-height: 28vh;
+                }
+            }
+            &__hardware{
+                height: auto;
+                width: 100%;
+                padding: 10vw;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas: 
+                    "vid1 vid1 vid1"
+                    "vid5 vid5 vid5"
+                    "vid2 vid3 vid4"
+                ;
+                gap: 3vw;
+                align-items: start;
+                &__video{
+                    box-shadow: rgb(128, 128, 128) 1px 1px 5px;
+                }
+                .landscape{
+                    align-self: start;
+                }
+                .portrait{
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+    .slideShow{
+        grid-template-columns: 0.5fr 12fr 0.5fr;
+        &__image{
+            max-width: 87%;
+            max-height: 75vh;
+        }
+        &__direction__left, &__direction__right{
+            background-size: 4.5vw 4.5vw;
+            height: 9vw;
+            width: 9vw;
+        }
+        &__direction__left{
+            justify-self: left;
+            rotate: 180deg;
+        }
+    }
+}

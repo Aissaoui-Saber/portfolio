@@ -1,0 +1,45 @@
+@font-face {
+  font-family: italicFigTree;
+  src: url(../src/assets/fonts/Figtree-Italic-VariableFont_wght.ttf) format('TrueType');
+  src: url(../src/assets/fonts/Figtree-Italic-VariableFont_wght.woff2) format('woff2');
+  font-weight: 1 1000;
+}
+@font-face {
+  font-family: figTree;
+  src: url(../src/assets/fonts/Figtree-VariableFont_wght.ttf) format('TrueType');
+  src: url(../src/assets/fonts/Figtree-VariableFont_wght.woff2) format('woff2');
+  font-weight: 1 1000;
+}
+
+
+:root {
+  --text-black: #303030;
+}
+
+$phone: 414px;
+$tablet: 820px;
+$extraLarge: 1400px;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: figTree;
+}
+
+html{
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+}
+
+
+body{
+  font-size: 10px;
+}

@@ -1,0 +1,76 @@
+@import '../App.scss';
+
+.contact {
+    scroll-snap-align: center;
+    background-color: rgb(236, 224, 207);
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: max-content;
+        width: max-content;
+        h3 {
+            font-size: 2.8em;
+            user-select: none;
+        }
+        p {
+            font-size: 2.6em;
+            font-weight: 800;
+            padding: 0.5em 1em;
+            margin: 1em;
+            border: solid 1px gray;
+            background-color: wheat;
+            border-radius: 15px;
+            cursor: text;
+            font-family: 'Courier New', Courier, monospace
+        }
+        &__social{
+            display: flex;
+            width: max-content;
+            gap: 2em;
+            img{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (min-device-width:$extraLarge) {
+    .contact {
+        &__body {
+            h3 {
+                font-size: 3.2em;
+            }
+            p {
+                font-size: 3em;
+                font-weight: 800;
+                padding: 0.5em 1em;
+                margin: 1em;
+            }
+        }
+    }
+}
+
+@media screen and (max-device-width:$tablet) {}
+
+@media screen and (max-device-width:$phone) {
+    .contact {
+        &__body {
+            place-content: center;
+
+            h3 {
+                font-size: 6vw;
+            }
+
+            p {
+                padding: 3vw 6vw;
+                font-size: 5vw;
+            }
+            
+        }
+    }
+}

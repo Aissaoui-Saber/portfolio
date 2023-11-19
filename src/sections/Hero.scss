@@ -1,0 +1,298 @@
+@import '../App.scss';
+
+.navbar {
+    display: grid;
+    color: var(--text-black);
+    grid-template-columns: auto 1fr auto;
+    gap: 1em;
+    align-items: center;
+    height: 10vh;
+
+    &__logo {
+
+        &__firstName,
+        &__lastName {
+            user-select: none;
+            font-size: 3.8em;
+            display: inline;
+        }
+
+        &__firstName {
+            font-weight: 800;
+            margin-right: 5px;
+        }
+
+        &__lastName {
+            font-weight: 300;
+        }
+    }
+
+    &__sections {
+        font-size: 2em;
+        text-align: center;
+        font-weight: 600;
+        display: flex;
+        padding: 0 8em;
+        justify-content: space-between;
+
+        a {
+            width: fit-content;
+            text-decoration: none;
+            color: var(--text-black);
+        }
+    }
+
+    &__language {
+        cursor: pointer;
+        background-color: transparent;
+        user-select: none;
+        font-weight: 900;
+        width: 2.5em;
+        height: 2.5em;
+        font-size: 1.5em;
+        border-radius: 50%;
+        border: solid rgba(100, 100, 100, 0.562) 1px;
+        padding: 0.5em;
+    }
+}
+
+.hero {
+    height: 100vh;
+    padding: 0 8em;
+    scroll-snap-align: center;
+    position: relative;
+    background-image: linear-gradient(to top right, #B0F1B5, #8CCCD6);
+
+    &__body {
+        height: 90vh;
+        display: grid;
+        grid-template-columns: 45% 55%;
+        align-items: center;
+
+        &__image {
+            width: 80%;
+            justify-self: center;
+        }
+
+        &__text {
+            z-index: 1000;
+            user-select: none;
+            display: grid;
+            color: var(--text-black);
+
+            &__hi {
+                font-size: 6.8em;
+            }
+
+            &__im {
+                font-weight: 400;
+                font-size: 2.2em;
+            }
+
+            &__about {
+                margin-top: 1em;
+                font-size: 1.2em;
+                color: white;
+                background-color: #CD5C08;
+                padding: 1em 2em;
+                border-radius: 10px;
+                cursor: pointer;
+                width: max-content;
+            }
+        }
+
+    }
+
+    &__lines {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        z-index: 0;
+        width: 45vh;
+    }
+}
+
+@media screen and (min-device-width:$extraLarge) {
+    .navbar {
+        gap: 1em;
+        height: 10vh;
+        &__logo {
+            &__firstName,
+            &__lastName {
+                font-size: 4.6em;
+            }
+        }
+
+        &__sections {
+            font-size: 2.6em;
+            padding: 0 10vw;
+        }
+
+        &__language {
+            width: 3em;
+            height: 3em;
+            font-size: 1.8em;
+            padding: 0.8em;
+        }
+    }
+    .hero {
+
+        padding: 0 9vw;
+    
+        &__body {
+            height: 90vh;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4em;
+            &__image {
+                width: 100%;
+                justify-self: center;
+            }
+    
+            &__text {
+                z-index: 1000;
+    
+                &__hi {
+                    font-size: 7em;
+                }
+    
+                &__im {
+                    font-weight: 400;
+                    font-size: 2.4em;
+                }
+    
+                &__about {
+                    margin-top: 1.2em;
+                    font-size: 1.4em;
+                    padding: 1em 2em;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    width: max-content;
+                }
+            }
+    
+        }
+    }
+}
+
+@media screen and (max-device-width:$tablet) {
+    .navbar {
+        grid-template-columns: 4fr 1fr;
+        padding: 1.5rem 4vw;
+
+        &__logo {}
+
+        &__sections {
+            display: none;
+        }
+
+        &__language {
+
+            font-size: clamp(0.5rem, 3vw, 1rem);
+            padding: 1.1vw;
+        }
+    }
+
+    .hero {
+        &__body {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-items: center;
+            justify-content: space-evenly;
+            z-index: 1000;
+            height: 88vh;
+            height: -webkit-fill-available;
+
+            &__image {
+                z-index: 1000;
+                width: 80%;
+            }
+
+            &__text {
+                z-index: 1000;
+                margin-bottom: 0px;
+
+                &__hi {
+                    font-size: 10vw;
+                }
+
+                &__im {
+                    font-size: 4vw;
+                }
+
+            }
+
+        }
+
+        &__lines {
+            width: 50vw;
+        }
+    }
+
+}
+
+@media screen and (max-device-width:$phone) {
+    .navbar {
+        grid-template-columns: 4fr 1fr;
+        height: 10svh;
+        &__logo {
+            justify-self: left;
+            &__firstName,
+            &__lastName {
+                font-size: 8vw;
+            }
+        }
+
+        &__sections {
+            display: none;
+        }
+
+        &__language {
+            font-size: 3.8vw;
+            justify-self: right;
+        }
+    }
+
+    .hero {
+        height: 100svh;
+        padding: 0;
+        &__body {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-items: center;
+            justify-content: space-evenly;
+            height: 90svh;
+            &__image {
+                z-index: 1000;
+                width: 95%;
+            }
+
+            &__text {
+                padding: 5vw;
+                z-index: 1000;
+                margin-bottom: 0px;
+
+                &__hi {
+                    font-size: 10vw;
+                }
+
+                &__im {
+                    font-size: 5vw;
+                }
+
+                &__about {
+                    font-size: 0.8rem;
+                }
+            }
+
+        }
+
+        &__lines {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            z-index: 0;
+            width: 80vw;
+        }
+    }
+}

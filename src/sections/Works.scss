@@ -1,0 +1,128 @@
+@import '../App.scss';
+.works{
+    scroll-snap-stop: always;
+    scroll-snap-align: start;
+    
+    background-color: #19212D;
+    padding: 1.8em 8em;
+    color: #DFDFDF;
+    user-select: none;
+    h1{
+        font-size: 3.6em;
+    }
+    h3{
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+    &__projects{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2em;
+        
+        &__project{
+            background-color: white;
+            border-radius: 15px;
+            display: grid;
+            grid-template-rows: auto auto;
+            transition: scale 0.3s;
+            cursor: pointer;
+            &__image{
+                border-radius: 15px;
+                height: 30vh;
+                display: grid;
+                img{
+                    max-width: 80%;
+                    max-height: 28vh;
+                    align-self: center;
+                    justify-self: center;
+                }
+            }
+            &__title{
+                align-self: center;
+                font-weight: 700;
+                a{
+                    text-decoration: none;
+                    color: var(--text-black);
+                }
+                font-size: 2.4em;
+                margin: 0.4em 0.5em;
+            }
+            &:hover{
+                scale: 1.03;
+            }
+            &:active{
+                scale: 1;
+            }
+        }
+    }
+}
+@media screen and (min-device-width:$extraLarge) {
+    .works{
+        padding: 1.8em 9vw;
+        h1{
+            font-size: 3.6em;
+        }
+        h3{
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        &__projects{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2em;
+            
+            &__project{
+                &__image{
+                    height: 20vh;
+                    img{
+                        max-height: 18vh;
+                    }
+                }
+                &__title{
+                    font-size: 2.2em;
+                    margin: 0.4em 0.5em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-device-width:$tablet) {
+    .works{
+        padding: 2rem;
+        h1{
+            font-size: clamp(1.5rem, 8vw, 2.5rem);
+        }
+        h3{
+            font-size: clamp(1rem, 6vw, 1.5rem);;
+        }
+        &__projects{
+            grid-template-columns: 1fr 1fr;
+            gap: 2vh;
+            &__project{
+                &:hover{
+                    scale: 1;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-device-width:$phone) {
+    .works{
+        padding: 1.5rem;
+        h1{
+            font-size: clamp(1rem, 8vw, 2rem);
+        }
+        h3{
+            font-size: clamp(1rem, 6vw, 1.5rem);;
+        }
+        &__projects{
+            grid-template-columns: 1fr;
+            gap: 2vh;
+            &__project{
+                &:hover{
+                    scale: 1;
+                }
+            }
+        }
+    }
+}
