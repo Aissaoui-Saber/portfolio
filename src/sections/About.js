@@ -3,6 +3,7 @@ import aboutImage from "../assets/images/about/about.png";
 import diploma from "../assets/images/about/diploma_10748339.png";
 import nvidia from "../assets/images/about/nvidia_882731.png";
 import azure from "../assets/images/about/azure900.png";
+import csd from '../assets/images/about/csd.png';
 import language from "../language";
 function About() {
     return (
@@ -50,6 +51,10 @@ function About() {
                 <div className="about__diploma__card">
                     <img src={azure}></img>
                     <h3>{language.getLanguage() === "FR" ? "Fondamentaux de Microsoft Azure":"Microsoft Azure Fundamentals"}<br/>AZ-900</h3>
+                </div>
+                <div className="about__diploma__card">
+                    <img src={csd}></img>
+                    <h3>{language.getLanguage() === "FR" ? "Développeur Scrum certifié":"Certified Scrum Developer"}</h3>
                 </div>
             </div>
             <br></br>
